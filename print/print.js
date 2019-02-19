@@ -20,7 +20,8 @@ function onScenario(scenario) {
 
 function onTest(test) {
 	countTest(test)
-	printTest(test)
+	if (!test.passed)
+		printTest(test)
 }
 
 function countTest(test) {
