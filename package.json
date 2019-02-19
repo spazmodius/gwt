@@ -1,0 +1,10 @@
+{
+  "name": "@spazmodius/gwt",
+  "version": "1.0.0",
+  "description": "Super simple Given-When-Then tests in Node.js",
+  "repository": "github:spazmodius/gwt",
+  "main": "gwt.js",
+  "dependencies": {
+    "@spazmodius/assert": "github:spazmodius/assert"
+  }
+}
