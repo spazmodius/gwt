@@ -5,4 +5,4 @@ const { Buffer } = require('buffer')
 
 when(randomBytes, 99)
 .then(({ returned }) => returned instanceof Buffer)
-.then(({ returned }, [size]) => returned.length === size)
+.then(({ returned }, [ size ]) => returned.length === size)
