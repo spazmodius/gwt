@@ -4,7 +4,7 @@
 
 ## Install and Usage
 
-`npm install spazmodius/gwt`
+`npm install spazmodius/gwt -D`
 
 Example:
 ```js
