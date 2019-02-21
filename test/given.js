@@ -8,7 +8,7 @@ function given(...args) {
 	++count
 	return { resolves: (description, values) => {
 		assert.equal(_given(...args).description, description, undefined, ...args)
-		assert.deepEqual(_given(...args).fn(), values, undefined, ...args)
+		assert.deepEqual(_given(...args).exec(), values, undefined, ...args)
 	}}
 }
 
