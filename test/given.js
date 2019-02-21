@@ -1,5 +1,5 @@
 'use strict'
-const _given = require('../given')
+const _given = require('../lib/_given')
 const assert = require('@spazmodius/assert')
 
 let count = 0

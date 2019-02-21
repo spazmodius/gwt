@@ -1,5 +1,5 @@
 'use strict'
-const _then = require('../then')
+const _then = require('../lib/_then')
 const assert = require('@spazmodius/assert')
 const cartesian = require('./cartesian')
 

@@ -1,5 +1,5 @@
 'use strict'
-const _when = require('../when')
+const _when = require('../lib/_when')
 const assert = require('@spazmodius/assert')
 const cartesian = require('./cartesian')
 
