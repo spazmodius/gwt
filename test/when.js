@@ -11,7 +11,8 @@ function when(...all) {
 		resolves: (expected_description, expected_return) => {
 			const { description, action, extra } = _when(...all)
 			assert.equal(description, expected_description, undefined, ...all)
-			assert.equal(action(...extra), expected_return, undefined, ...all)
+			Promise.resolve(action(...extra))
+				.then(returned => assert.equal(returned, expected_return, undefined, ...all))
 		},
 		throws: () => {
 			assert.that(_when, ...all)
@@ -34,10 +35,11 @@ function isInvalid(classes) {
 }
 
 function fn() { return arguments.length }
+function fp() { return Promise.resolve(arguments.length) }
 
 const Description = [ 'a', 1, [], true, null ]
 const Undefined = [ undefined ]
-const Function = [ fn ]
+const Function = [ fn, fp ]
 const NonFunction = [ 'b', 2, [], true, null, undefined ]
 const Anything = [ 'c', 3, [], true, fn, null, undefined ]
 

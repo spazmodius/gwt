@@ -11,7 +11,8 @@ function then(...args) {
 		resolves: (expected_description, expected_return) => {
 			const { description, expectation, extra } = _then(...args)
 			assert.equal(description, expected_description, undefined, ...args)
-			assert.equal(expectation(...extra), expected_return, undefined, ...args)
+			Promise.resolve(expectation(...extra))
+				.then(returned => assert.equal(returned, expected_return, undefined, ...args))
 		},
 		throws: () => {
 			assert.that(_then, ...args)
@@ -34,10 +35,11 @@ function isInvalid(classes) {
 }
 
 function expectation() { return arguments.length }
+function expectationp() { return Promise.resolve(arguments.length) }
 
 const Description = [ 'a', 1, [], true, null ]
 const Undefined = [ undefined ]
-const Function = [ expectation ]
+const Function = [ expectation, expectationp ]
 const NonFunction = [ 'b', 2, [], true, null, undefined ]
 const Anything = [ 'c', 3, [], true, expectation, null, undefined ]
 
