@@ -24,7 +24,7 @@ function* _formatArguments(args, parms) {
 			yield `${parm.name} = ${value}`
 		}
 		else {
-			if (parm.rest && i === args.length)
+			if (parm && parm.rest && i === args.length)
 				value += ']'
 			yield value
 		}
