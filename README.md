@@ -56,8 +56,12 @@ May be followed by more `.given()`, or `.when()`.
 
 You may provide directly any number of `values` or Promises,
 which will become context values.
+> **Note**: because of the supported signatures, if the first of `values` is a string, then the `description` argument must be provided.
+You may pass `undefined` or `''` to get the generated default.
+
 Alternatively, provide a function, or async function, along with arguments;
 the return value of `fn(...args)` will become one context value.
+
 All context values will be passed to the **when** action, as arguments in the same order that they appear in all the `given()`s.
 
 ### .when( _[description], action, [...more]_ )
