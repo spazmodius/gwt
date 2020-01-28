@@ -8,8 +8,8 @@ const splitOnChar = require('./split-on-char')
 const splitOnCommas = splitOnChar.bind(null, ',')
 const splitOnEqual = splitOnChar.bind(null, '=')
 
-const rxFunctionArgs = /^function[^(]*\((.*)\)\s*{/
-const rxArrowArgs = /^(.*)=>/
+const rxFunctionArgs = /^function[^(]*\((.*)\)\s*{/s
+const rxArrowArgs = /^(.*)=>/s
 
 function getParameters(fn) {
 	return parseParameters(fn.toString())
@@ -53,7 +53,7 @@ function toDescriptor(parm) {
 	if (name.startsWith('...')) {
 		rest = true
 		name = name.slice(3)
-	}	
+	}
 	return {
 		name,
 		default: defaultValue,
