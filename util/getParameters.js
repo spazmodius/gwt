@@ -9,7 +9,7 @@ const splitOnCommas = splitOnChar.bind(null, ',')
 const splitOnEqual = splitOnChar.bind(null, '=')
 
 const rxFunctionArgs = /^function[^(]*\((.*)\)\s*{/s
-const rxArrowArgs = /^(.*)=>/s
+const rxArrowArgs = /^(.*?)=>/s
 
 function getParameters(fn) {
 	return parseParameters(fn.toString())

@@ -104,4 +104,9 @@ const arrowWithNewline = (
 ) => {}
 test(arrowWithNewline, [])
 
+const arrowNestedArrow = a => b => {}
+test(arrowNestedArrow, [
+	{ name: 'a', default: undefined, rest: false },
+])
+
 console.log(count, 'Tests Passed')
